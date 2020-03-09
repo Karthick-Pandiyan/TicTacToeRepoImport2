@@ -13,6 +13,7 @@ class Board(var playerOne: String, var playerTwo: String) {
         const val PLAYER_TWO_VALUE = "O"
         const val BOARD_SIZE = 3
         const val INDEX_ZERO = 0
+        const val NO_WINNER_FOUND = "No winner found"
     }
 
     fun isWinnerAvailable(): Boolean = hasThreeSameHorizontalCells() || hasThreeSameVerticalCells() || hasThreeSameDiagonalCells()

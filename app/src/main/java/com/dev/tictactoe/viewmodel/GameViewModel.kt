@@ -35,13 +35,11 @@ class GameViewModel: ViewModel() {
     }
 
     fun updateGameStatus() {
-        if(board.isWinnerAvailable())
-            winner.postValue(board.currentPlayer.name)
-        else if(board.isFull())
-            noWinner.postValue("No winner found!")
-        else
-            board.switchPlayer()
-
+        return when {
+            board.isWinnerAvailable() -> winner.postValue(board.currentPlayer.name)
+            board.isFull() -> noWinner.postValue(Board.NO_WINNER_FOUND)
+            else -> board.switchPlayer()
+        }
     }
     fun stringFromNumbers(vararg numbers: Int): String {
         val sNumbers = StringBuilder()
