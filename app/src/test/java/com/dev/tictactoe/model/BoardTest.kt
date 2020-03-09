@@ -45,4 +45,13 @@ class BoardTest {
 
         Assert.assertNotEquals(expectedResult, actualResult)
     }
+
+    @Test
+    fun `Given function should return current player name as player one name, when game starts on first time`(){
+        val expectedResult = player1.name
+
+        val actualResult = game.currentPlayer.name
+
+        Assert.assertEquals(expectedResult, actualResult)
+    }
 }
