@@ -26,6 +26,7 @@ class GameViewModel: ViewModel() {
         if (board.cells[row][column].isEmptyCell) {
             board.cells[row][column] = Cell(board.currentPlayer)
             cells[stringFromNumbers(row, column)] = board.currentPlayer.value
+            updateGameStatus()
         }
     }
 
@@ -34,6 +35,8 @@ class GameViewModel: ViewModel() {
             winner.postValue(board.currentPlayer.name)
         else if(board.isFull())
             noWinner.postValue("No winner found!")
+        else
+            board.switchPlayer()
 
     }
     fun stringFromNumbers(vararg numbers: Int): String {
