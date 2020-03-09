@@ -36,7 +36,7 @@ class Board(var playerOne: String, var playerTwo: String) {
     }
 
     fun getSelectedPosition(row: Int, column: Int) = cells[row][column]
-
+    fun isFull() = cell.isFull(cells)
     private fun compareValuesFromRight() = cell.getDiagonalFromRightToLeft(cells)
     private fun compareValuesFromLeft() = cell.getDiagonalCellsFromLeftToRight(cells)
     private fun compareValuesByRow(index: Int) = cell.getHorizontalCells(cells, index)
