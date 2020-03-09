@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         activityGameBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         gameViewModel.init(getString(R.string.player_one), getString(R.string.player_two))
         activityGameBinding.gameViewModel = gameViewModel
-
+        invalidateGameBoard()
     }
 
     private fun invalidateGameBoard() {
