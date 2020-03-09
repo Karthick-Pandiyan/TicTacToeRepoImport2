@@ -98,4 +98,16 @@ class BoardTest {
 
         Assert.assertTrue(actualResult)
     }
+
+    @Test
+    fun `Given function should return expected result, if it has three same diagonal cells from Left`() {
+
+        val cell = Cell(game.player1)
+        game.cells[0][0] = cell
+        game.cells[1][1] = cell
+        game.cells[2][2] = cell
+        val actualResult = game.isWinnerAvailable()
+
+        Assert.assertTrue(actualResult)
+    }
 }
