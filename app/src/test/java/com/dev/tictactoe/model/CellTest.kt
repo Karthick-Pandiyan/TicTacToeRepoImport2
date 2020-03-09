@@ -34,4 +34,15 @@ class CellTest {
     fun `Given function should return false when cell is empty`(){
         Assert.assertFalse(cell.hasCellValuesAreEqual())
     }
+
+    @Test
+    fun `Given function should return false, when player value is not available`(){
+
+        val player = Player(playerOne, "")
+        val cell = Cell(player)
+
+        val actualResult = cell.hasCellValuesAreEqual(cell)
+
+        Assert.assertEquals(false, actualResult)
+    }
 }
