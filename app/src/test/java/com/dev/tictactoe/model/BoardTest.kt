@@ -5,13 +5,23 @@ import org.junit.Test
 
 class BoardTest {
     private val playerOne = "John"
-    private val game = Board(playerOne)
+    private val playerTwo = "Harry"
+    private val game = Board(playerOne, playerTwo)
 
     @Test
     fun `Given function should return expected player, when player one called`(){
         val expectedResult = playerOne
 
         val actualResult = game.playerOne
+
+        Assert.assertEquals(expectedResult, actualResult)
+    }
+
+    @Test
+    fun `Given function should return expected player, when player two called`(){
+        val expectedResult = playerTwo
+
+        val actualResult = game.playerTwo
 
         Assert.assertEquals(expectedResult, actualResult)
     }
