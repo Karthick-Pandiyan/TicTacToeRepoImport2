@@ -27,12 +27,20 @@ class GameViewModel: ViewModel() {
     fun getNoWinner(): LiveData<String> = noWinner
 
     fun onClickedCellAt(row: Int, column: Int) {
-        if (board.cells[row][column].isEmptyCell) {
-            board.cells[row][column] = Cell(board.currentPlayer)
-            cells[stringFromNumbers(row, column)] = board.currentPlayer.value
-            updateGameStatus()
+        if (isCellEmpty(row, column)) {
+            updatePlayerValueInSelectedCell(row, column)
         }
     }
+
+    private fun updatePlayerValueInSelectedCell(row: Int, column: Int) {
+        board.cells[row][column] = notifyCurrentPlayer()
+        cells[stringFromNumbers(row, column)] = getCurrentPlayerValue()
+        updateGameStatus()
+    }
+
+    private fun isCellEmpty(row: Int, column: Int) = board.cells[row][column].isEmptyCell
+    private fun notifyCurrentPlayer() = Cell(board.currentPlayer)
+    private fun getCurrentPlayerValue() = board.currentPlayer.value
 
     fun updateGameStatus() {
         return when {
@@ -43,8 +51,7 @@ class GameViewModel: ViewModel() {
     }
     fun stringFromNumbers(vararg numbers: Int): String {
         val sNumbers = StringBuilder()
-        for (number in numbers)
-            sNumbers.append(number)
+        numbers.forEach { number -> sNumbers.append(number) }
         return sNumbers.toString()
     }
 
