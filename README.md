@@ -1,4 +1,5 @@
-# Tic Tac Toe
+# TIC TAC TOE - Android - Kotlin Based Application
+Tic Tac Toe is a 2-player game. Each player takes turn to mark a segment with X or O depending on their turn.
 
 ## Rules
 
@@ -11,6 +12,9 @@ The rules are described below :
 	- All nine squares are filled.
 - If a player is able to draw three X’s or three O’s in a row, that player wins.
 - If all nine squares are filled and neither player has three in a row, the game is a draw.
+
+## Useful link
+The complete description can be found here : https://github.com/WeSquad/tic-tac-toe-react
 
 # Prerequisites
 - 4 GB RAM minimum, 8 GB RAM recommended
