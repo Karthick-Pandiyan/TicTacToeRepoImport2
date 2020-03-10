@@ -53,7 +53,7 @@ Step-2: Please find the test class files and its path in below table:
 | File Name  | File Path|
 | ------------- | ------------- |
 | CellTest  | "app/src/test/java/com.dev.tictactoe.model.CellTest"  |
-| GameTest  | "app/src/test/java/com.dev.tictactoe.model.GameTest"  |
+| BoardTest  | "app/src/test/java/com.dev.tictactoe.model.BoardTest"  |
 | PlayerTest  | "app/src/test/java/com.dev.tictactoe.model.PlayerTest"  |
 | GameViewModelTest  | "app/src/test/java/com.dev.tictactoe.viewmodel.GameViewModelTest"  |
 
